@@ -1,0 +1,23 @@
+// Last updated: 27/08/2026, 10:19:21
+class Solution {
+    public boolean stoneGameIX(int[] stones) {
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        for (int x : stones) {
+            if (x % 3 == 0) {
+                a++;
+            } else if (x % 3 == 1) {
+                b++;
+            } else {
+                c++;
+            }
+        }
+
+        if (a % 2 == 0) {
+            return b > 0 && c > 0;
+        }
+
+        return Math.abs(b - c) > 2;
+    }
+}
